@@ -43,7 +43,9 @@ export default {
     const response = await axios.get(
       "https://kiku-kash.microcms.io/api/v1/articles/",
       {
-        headers: { "X-MICROCMS-API-KEY": 'ca28af1304964604a52a994cbc6e05ce45e8' }
+        headers: { "X-MICROCMS-API-KEY": 'ca28af1304964604a52a994cbc6e05ce45e8' },
+        //limitを30件にする
+        params: {limit: 30}
       }
     );
     this.articles = response.data.contents;
